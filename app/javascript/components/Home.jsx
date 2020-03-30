@@ -20,7 +20,6 @@ class NewShorturl extends React.Component {
     }
     
     onSubmit(event) {
-        /*TODO:: submit form*/
         event.preventDefault();
 
         const url = "/api/v1/shorturls/create";
@@ -56,7 +55,7 @@ class NewShorturl extends React.Component {
           .catch(error => console.log(error.message));
 
     }
-    
+
     render() {
       let form =this.state.showURL ?
         null:
@@ -69,6 +68,7 @@ class NewShorturl extends React.Component {
           />
           <button type="submit">Shorten!</button>
         </form>;
+
         return (
             <div className="form-wrapper">
                 <h1 className="title">Shortify</h1>
