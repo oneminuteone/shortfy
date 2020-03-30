@@ -8,7 +8,6 @@ export class Redirect extends Component {
 
   componentDidMount() {
     document.body.style.display = "none"
-    console.log(this.state.shortName)
     const url = `/api/v1/shorturls/update/${this.state.shortName}`;
     fetch(url); 
     window.location = this.state.loc;

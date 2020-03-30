@@ -22,7 +22,6 @@ class NewShorturl extends React.Component {
     onSubmit(event) {
         /*TODO:: submit form*/
         event.preventDefault();
-        console.log(this.state.originalURL);
 
         const url = "/api/v1/shorturls/create";
         const { originalURL, shortName } = this.state;
@@ -51,7 +50,6 @@ class NewShorturl extends React.Component {
             throw new Error("Network response was not ok.");
           })
           .then(response => {
-            console.log(response);
             this.setState({'shortName': response.shortName});
             this.setState({'showURL': true});
           })

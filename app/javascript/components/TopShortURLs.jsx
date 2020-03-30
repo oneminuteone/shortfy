@@ -22,18 +22,20 @@ class TopShortURLs extends React.Component {
         })
         .then(response => {
           this.setState({ topLinks: response })
-          console.log(response)
         })
         .catch(() => this.props.history.push("/"));
     }
  
     
     render() {
-      console.log(this.state.topLinks);
       const list = this.state.topLinks.map((item,index) => {
         return (
           <div className="row" key={index}>
-            <div className="cell "><a href={window.location.href+item.shortName}>{item.shortName}</a></div>
+            <div className="cell ">
+              <Link to={"/"+item.shortName}>
+                {item.shortName}
+              </Link>  
+            </div>
             <div className="cell url-cell"><a href={item.originalURL}>{item.originalURL}</a></div>
             <div className="cell">{item.views}</div>
           </div>          

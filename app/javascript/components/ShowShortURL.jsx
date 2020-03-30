@@ -17,7 +17,6 @@ class ShowShortURL extends React.Component {
           params: { shortName }
         }
       } = this.props;
-      console.log(shortName)
       const url = `/api/v1/shorturls/${shortName}`;
       fetch(url)
         .then(response => {
@@ -32,7 +31,6 @@ class ShowShortURL extends React.Component {
  
     
     render() {
-      console.log (this.state.redirect.originalURL);
       return this.state.redirect.originalURL ?
       (
         <Redirect shortName={this.state.redirect.shortName} loc={this.state.redirect.originalURL}></Redirect>    
